@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include agua_jerusalen_frappe *.css
+recursive-include agua_jerusalen_frappe *.csv
+recursive-include agua_jerusalen_frappe *.html
+recursive-include agua_jerusalen_frappe *.ico
+recursive-include agua_jerusalen_frappe *.js
+recursive-include agua_jerusalen_frappe *.json
+recursive-include agua_jerusalen_frappe *.md
+recursive-include agua_jerusalen_frappe *.png
+recursive-include agua_jerusalen_frappe *.py
+recursive-include agua_jerusalen_frappe *.svg
+recursive-include agua_jerusalen_frappe *.txt
+recursive-exclude agua_jerusalen_frappe *.pyc
