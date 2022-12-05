@@ -1,0 +1,31 @@
+
+name: Deploy to production environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            cd ${{ secrets.APP_PATH }}
+            git pull
+            bench --site ${{ secrets.SITE_NAME }} set-maintenance-mode on
+            cd ../..
+            bench --site ${{ secrets.SITE_NAME }} migrate
+            bench --site ${{ secrets.SITE_NAME }} set-maintenance-mode off
+
+            
+            
