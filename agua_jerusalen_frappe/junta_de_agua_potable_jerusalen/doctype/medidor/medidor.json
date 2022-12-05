@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:####",
+ "creation": "2022-11-26 07:34:14.137071",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "number",
+  "neighborhood",
+  "column_break_1",
+  "expiration_date",
+  "section_break_1",
+  "observation"
+ ],
+ "fields": [
+  {
+   "fieldname": "number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "N\u00famero medidor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expiration_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Fecha expiraci\u00f3n"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Long Text",
+   "label": "Observaci\u00f3n"
+  },
+  {
+   "fieldname": "neighborhood",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Barrio",
+   "options": "Barrio",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Observaciones"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-12-03 13:18:21.570575",
+ "modified_by": "Administrator",
+ "module": "Junta de Agua Potable Jerusalen",
+ "name": "Medidor",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

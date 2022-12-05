@@ -6,6 +6,9 @@ app_publisher = "Luis Pillaga"
 app_description = "Aplicacion para la junta de agua potable de jerusalen"
 app_email = "lpillag@gmail.com"
 app_license = "MIT"
+fixtures = [
+  "Custom Field"
+]
 
 # Includes in <head>
 # ------------------
