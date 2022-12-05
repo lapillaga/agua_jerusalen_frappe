@@ -10,6 +10,12 @@ fixtures = [
   "Custom Field"
 ]
 
+doc_events = {
+  "Customer": {
+    "before_save": "agua_jerusalen_frappe.customer.before_save"
+  }
+}
+
 # Includes in <head>
 # ------------------
 
