@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "autoname": "format:PL-{DD}-{MM}-{YYYY}-{####}",
+ "creation": "2022-12-24 17:38:07.158364",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "water_meter",
+  "issue_date",
+  "expiration_date",
+  "start_date",
+  "end_date",
+  "days_billed",
+  "paid",
+  "billed"
+ ],
+ "fields": [
+  {
+   "fieldname": "water_meter",
+   "fieldtype": "Link",
+   "label": "Medidor",
+   "options": "Medidor",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de emisi\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expiration_date",
+   "fieldtype": "Date",
+   "label": "Fecha de vencimiento",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Fecha desde",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Fecha hasta",
+   "reqd": 1
+  },
+  {
+   "fieldname": "days_billed",
+   "fieldtype": "Int",
+   "label": "D\u00edas facturados",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pagado",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "billed",
+   "fieldtype": "Check",
+   "label": "Facturado",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-12-24 17:38:07.158364",
+ "modified_by": "Administrator",
+ "module": "Junta de Agua Potable Jerusalen",
+ "name": "Planilla",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

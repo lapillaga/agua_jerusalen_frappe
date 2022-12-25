@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:####",
+ "autoname": "field:number",
  "creation": "2022-11-26 07:34:14.137071",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,20 +10,25 @@
  "field_order": [
   "number",
   "neighborhood",
+  "actual_reading",
   "column_break_1",
   "expiration_date",
+  "is_active",
+  "instalation_date",
   "section_break_1",
   "observation"
  ],
  "fields": [
   {
    "fieldname": "number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "N\u00famero medidor",
-   "reqd": 1
+   "length": 20,
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "expiration_date",
@@ -56,16 +61,41 @@
    "fieldname": "section_break_1",
    "fieldtype": "Section Break",
    "label": "Observaciones"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Activo",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "actual_reading",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Medici\u00f3n actual",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "instalation_date",
+   "fieldtype": "Date",
+   "label": "Fecha de instalaci\u00f3n"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-12-03 13:18:21.570575",
+ "modified": "2022-12-25 13:47:19.970981",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,
