@@ -12,13 +12,7 @@
   "start_date",
   "collection_start_date",
   "column_break_1",
-  "end_date",
-  "measure_tab",
-  "measurements",
-  "amended_from",
-  "water_bill_tab",
-  "schedules",
-  "minga_tab"
+  "end_date"
  ],
  "fields": [
   {
@@ -29,21 +23,6 @@
    "in_list_view": 1,
    "label": "Fecha de inicio cobro",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Periodo Pago",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "schedules",
-   "fieldtype": "Table",
-   "label": "Planillas",
-   "options": "Planilla"
   },
   {
    "default": "Today",
@@ -60,12 +39,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "measurements",
-   "fieldtype": "Table",
-   "label": "Mediciones",
-   "options": "Medicion"
-  },
-  {
    "fieldname": "general_tab",
    "fieldtype": "Tab Break",
    "label": "General",
@@ -74,30 +47,12 @@
   {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "measure_tab",
-   "fieldtype": "Tab Break",
-   "label": "Mediciones",
-   "options": "fa fa-tag"
-  },
-  {
-   "fieldname": "water_bill_tab",
-   "fieldtype": "Tab Break",
-   "label": "Planillas",
-   "options": "fa fa-tag"
-  },
-  {
-   "fieldname": "minga_tab",
-   "fieldtype": "Tab Break",
-   "label": "Mingas",
-   "options": "fa fa-tag"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-25 13:41:33.702489",
+ "modified": "2022-12-26 10:59:33.869401",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Periodo Pago",
@@ -118,7 +73,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

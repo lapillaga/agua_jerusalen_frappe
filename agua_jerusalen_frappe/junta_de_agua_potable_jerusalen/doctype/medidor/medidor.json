@@ -8,13 +8,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "number",
+  "customer",
   "neighborhood",
   "actual_reading",
-  "column_break_1",
-  "expiration_date",
   "is_active",
+  "column_break_1",
+  "number",
   "instalation_date",
+  "expiration_date",
   "section_break_1",
   "observation"
  ],
@@ -86,18 +87,37 @@
    "fieldname": "instalation_date",
    "fieldtype": "Date",
    "label": "Fecha de instalaci\u00f3n"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Cliente",
+   "options": "Customer",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "istable": 1,
  "links": [],
- "modified": "2022-12-25 13:47:19.970981",
+ "modified": "2022-12-26 11:26:52.412097",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
- "permissions": [],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

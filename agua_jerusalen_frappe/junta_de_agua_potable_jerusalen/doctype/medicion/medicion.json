@@ -6,14 +6,17 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "read_at",
+  "period",
   "water_meter",
   "previous_reading",
-  "actual_reading",
   "total_consume",
+  "is_completed",
+  "column_break_1",
+  "read_at",
   "operator",
+  "actual_reading",
   "uom",
-  "column_break_1"
+  "completed_at"
  ],
  "fields": [
   {
@@ -22,7 +25,7 @@
    "fieldname": "read_at",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "Fecha hora lectura",
+   "label": "Fecha lectura",
    "reqd": 1
   },
   {
@@ -38,13 +41,7 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Lectura anterior",
-   "reqd": 1
-  },
-  {
-   "fieldname": "actual_reading",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Lectura actual",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -70,20 +67,68 @@
   {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_reading",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Lectura actual",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_completed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Completado",
+   "reqd": 1
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Datetime",
+   "label": "Fecha completado",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "period",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Periodo Pago",
+   "options": "Periodo Pago",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "istable": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-12-25 20:07:46.325983",
+ "modified": "2022-12-26 11:06:35.845547",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",
  "name_case": "UPPER CASE",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [],
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }
