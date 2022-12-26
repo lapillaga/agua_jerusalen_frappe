@@ -1,30 +1,30 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PP-{MM}-{YYYY}-{##}",
- "creation": "2022-12-24 17:19:12.146724",
+ "autoname": "format:{MM}-{YYYY}-{####}",
+ "creation": "2022-12-26 17:44:35.611066",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "general_tab",
   "description",
   "start_date",
-  "collection_start_date",
   "column_break_1",
+  "barrio",
   "end_date",
-  "amended_from",
-  "days_billed"
+  "details_section",
+  "observations",
+  "location",
+  "amended_from"
  ],
  "fields": [
   {
-   "allow_in_quick_entry": 1,
-   "default": "Today",
-   "fieldname": "collection_start_date",
-   "fieldtype": "Date",
+   "fieldname": "description",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Fecha de inicio cobro",
+   "label": "Descripci\u00f3n",
+   "options": "Name",
    "reqd": 1
   },
   {
@@ -32,8 +32,21 @@
    "fieldname": "start_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Fecha inicio",
+   "label": "Fecha de inicio",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "barrio",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Barrio",
+   "options": "Barrio"
   },
   {
    "default": "Today",
@@ -44,48 +57,38 @@
    "reqd": 1
   },
   {
-   "fieldname": "general_tab",
-   "fieldtype": "Tab Break",
-   "label": "General",
-   "options": "fa fa-tag"
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Mas detalles"
   },
   {
-   "fieldname": "column_break_1",
-   "fieldtype": "Column Break"
+   "fieldname": "observations",
+   "fieldtype": "Text Editor",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Ubicaci\u00f3n"
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Periodo Pago",
+   "options": "Minga",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "days_billed",
-   "fieldtype": "Int",
-   "label": "D\u00edas del periodo",
-   "non_negative": 1,
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Descripci\u00f3n",
-   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 18:07:46.340079",
+ "modified": "2022-12-26 17:59:27.257380",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
- "name": "Periodo Pago",
+ "name": "Minga",
  "name_case": "UPPER CASE",
  "naming_rule": "Expression",
  "owner": "Administrator",
@@ -107,6 +110,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "description",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

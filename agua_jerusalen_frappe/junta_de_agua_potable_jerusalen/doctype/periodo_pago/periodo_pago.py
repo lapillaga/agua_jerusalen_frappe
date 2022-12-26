@@ -9,6 +9,11 @@ from frappe.utils import now
 from datetime import datetime, date
 
 
+@frappe.whitelist()
+def get_periods():
+    return frappe.get_all('Periodo Pago', fields=['*'])
+
+
 class PeriodoPago(Document):
 
     def before_save(self):
