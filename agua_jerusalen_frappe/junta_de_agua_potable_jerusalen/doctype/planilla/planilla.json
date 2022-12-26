@@ -11,6 +11,7 @@
   "start_date",
   "days_billed",
   "paid",
+  "base_price",
   "amount",
   "column_break_1",
   "water_meter",
@@ -18,8 +19,11 @@
   "end_date",
   "rate",
   "billed",
+  "penalty_price",
   "excess_amount",
-  "amended_from"
+  "amended_from",
+  "totals_section",
+  "total"
  ],
  "fields": [
   {
@@ -75,6 +79,7 @@
    "default": "0",
    "fieldname": "billed",
    "fieldtype": "Check",
+   "in_standard_filter": 1,
    "label": "Facturado",
    "read_only": 1,
    "reqd": 1
@@ -123,12 +128,43 @@
    "non_negative": 1,
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "base_price",
+   "fieldtype": "Currency",
+   "label": "Precio base",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "penalty_price",
+   "fieldtype": "Currency",
+   "label": "Precio recargo",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total planilla",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 13:50:21.250190",
+ "modified": "2022-12-26 14:52:17.953601",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",

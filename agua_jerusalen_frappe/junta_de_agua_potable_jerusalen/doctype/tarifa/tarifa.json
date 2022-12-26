@@ -14,7 +14,7 @@
   "min",
   "column_break_1",
   "is_active",
-  "grace_months",
+  "grace_days",
   "interest_penalty",
   "max"
  ],
@@ -60,15 +60,6 @@
   },
   {
    "allow_in_quick_entry": 1,
-   "default": "0",
-   "fieldname": "grace_months",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Meses mora",
-   "reqd": 1
-  },
-  {
-   "allow_in_quick_entry": 1,
    "fieldname": "interest_penalty",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -88,11 +79,20 @@
    "fieldtype": "Int",
    "label": "M\u00e1ximo consumo",
    "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0",
+   "fieldname": "grace_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "D\u00edas mora",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-26 14:30:27.999181",
+ "modified": "2022-12-26 14:51:18.600611",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Tarifa",
