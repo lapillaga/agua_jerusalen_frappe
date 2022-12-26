@@ -11,7 +11,9 @@
   "previous_reading",
   "actual_reading",
   "total_consume",
-  "operator"
+  "operator",
+  "uom",
+  "column_break_1"
  ],
  "fields": [
   {
@@ -42,27 +44,38 @@
    "fieldname": "actual_reading",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Lecutra actual",
+   "label": "Lectura actual",
    "reqd": 1
   },
   {
    "fieldname": "total_consume",
    "fieldtype": "Data",
    "label": "Consumo",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "operator",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Operador",
-   "options": "User",
-   "reqd": 1
+   "options": "User"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Unidad de medida",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-12-25 11:09:25.675170",
+ "modified": "2022-12-25 20:07:46.325983",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",

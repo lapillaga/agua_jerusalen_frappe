@@ -10,7 +10,8 @@
  "field_order": [
   "max_water_meter",
   "basic_item",
-  "uom"
+  "uom",
+  "actual_operator"
  ],
  "fields": [
   {
@@ -33,12 +34,19 @@
    "label": "Unidad de medida por defecto",
    "options": "UOM",
    "reqd": 1
+  },
+  {
+   "fieldname": "actual_operator",
+   "fieldtype": "Link",
+   "label": "Operador actual",
+   "options": "User",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-25 13:56:24.447070",
+ "modified": "2022-12-25 15:40:48.249385",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Configuracion Junta",
