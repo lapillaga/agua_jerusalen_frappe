@@ -10,6 +10,7 @@
   "water_meter",
   "previous_reading",
   "total_consume",
+  "excess_consume",
   "column_break_1",
   "customer",
   "actual_reading",
@@ -108,12 +109,20 @@
    "options": "Medicion",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "excess_consume",
+   "fieldtype": "Int",
+   "label": "Exceso consumo",
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 11:58:54.932004",
+ "modified": "2022-12-26 13:53:24.180869",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",

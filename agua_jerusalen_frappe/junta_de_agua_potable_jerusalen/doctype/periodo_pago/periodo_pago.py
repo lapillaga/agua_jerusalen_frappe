@@ -25,7 +25,7 @@ class PeriodoPago(Document):
 
 		for water_meter in water_meters:
 			actual_reading = water_meter.actual_reading
-			customer = frappe.get_value("Medidor", water_meter.name, "customer")
+			customer = frappe.get_value("Medidor", water_meter.name, 'customer')
 
 			if not actual_reading:
 				actual_reading = 0

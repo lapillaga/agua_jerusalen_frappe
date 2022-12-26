@@ -79,20 +79,20 @@
    "default": "1",
    "fieldname": "min",
    "fieldtype": "Int",
-   "label": "M\u00ednimo",
+   "label": "M\u00ednimo consumo",
    "reqd": 1
   },
   {
    "default": "10",
    "fieldname": "max",
    "fieldtype": "Int",
-   "label": "M\u00e1ximo",
+   "label": "M\u00e1ximo consumo",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-26 12:26:03.087229",
+ "modified": "2022-12-26 14:30:27.999181",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Tarifa",
