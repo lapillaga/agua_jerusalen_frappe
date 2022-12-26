@@ -12,7 +12,7 @@
   "days_billed",
   "paid",
   "base_price",
-  "amount",
+  "measurement",
   "column_break_1",
   "water_meter",
   "expiration_date",
@@ -113,15 +113,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "amount",
-   "fieldtype": "Currency",
-   "label": "Valor a pagar",
-   "non_negative": 1,
-   "precision": "2",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
    "fieldname": "excess_amount",
    "fieldtype": "Currency",
    "label": "Valor por exceso",
@@ -158,13 +149,20 @@
    "label": "Total planilla",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "fieldname": "measurement",
+   "fieldtype": "Link",
+   "label": "Medici\u00f3n",
+   "options": "Medicion",
+   "reqd": 1
   }
  ],
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 14:52:17.953601",
+ "modified": "2022-12-26 17:11:29.883371",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",

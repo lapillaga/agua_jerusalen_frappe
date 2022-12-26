@@ -13,7 +13,8 @@
   "collection_start_date",
   "column_break_1",
   "end_date",
-  "amended_from"
+  "amended_from",
+  "days_billed"
  ],
  "fields": [
   {
@@ -59,12 +60,20 @@
    "options": "Periodo Pago",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "days_billed",
+   "fieldtype": "Int",
+   "label": "D\u00edas del periodo",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 11:48:00.821295",
+ "modified": "2022-12-26 16:37:04.812005",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Periodo Pago",

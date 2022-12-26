@@ -38,8 +38,6 @@
   {
    "fieldname": "expiration_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Fecha expiraci\u00f3n"
   },
@@ -124,7 +122,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-26 12:21:27.482846",
+ "modified": "2022-12-26 16:04:20.671516",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
