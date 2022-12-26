@@ -8,16 +8,20 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "general_tab",
   "customer",
   "neighborhood",
   "actual_reading",
-  "is_active",
+  "rate",
   "column_break_1",
   "number",
   "instalation_date",
   "expiration_date",
+  "is_active",
   "section_break_1",
-  "observation"
+  "observation",
+  "location_tab",
+  "location"
  ],
  "fields": [
   {
@@ -80,7 +84,6 @@
    "in_list_view": 1,
    "label": "Medici\u00f3n actual",
    "non_negative": 1,
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -94,11 +97,34 @@
    "label": "Cliente",
    "options": "Customer",
    "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Link",
+   "label": "Tarifa",
+   "options": "Tarifa",
+   "reqd": 1
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "General",
+   "options": "fas fa-pen"
+  },
+  {
+   "fieldname": "location_tab",
+   "fieldtype": "Tab Break",
+   "label": "Ubicaci\u00f3n"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Mapa"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-26 11:26:52.412097",
+ "modified": "2022-12-26 12:21:27.482846",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",

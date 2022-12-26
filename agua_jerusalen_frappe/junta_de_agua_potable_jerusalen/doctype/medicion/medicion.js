@@ -8,5 +8,13 @@ frappe.ui.form.on('Medicion', {
 });
 
 frappe.ui.form.on("Medicion", "actual_reading", function(frm) {
-    console.log('actual_reading');
+    let total_consumption = frm.doc.actual_reading - frm.doc.previous_reading;
+
+    if (frm.doc.actual_reading < frm.doc.previous_reading) {
+        frappe.msgprint("El valor actual no puede ser menor que el valor anterior");
+        frm.doc.actual_reading = frm.doc.previous_reading;
+        return;
+    }
+
+    frm.set_value('total_consume', total_consumption);
 });

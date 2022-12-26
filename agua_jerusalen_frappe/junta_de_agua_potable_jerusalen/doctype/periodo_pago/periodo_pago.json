@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PP-{DD}-{MM}-{YYYY}-{##}",
+ "autoname": "format:PP-{MM}-{YYYY}-{##}",
  "creation": "2022-12-24 17:19:12.146724",
  "default_view": "List",
  "doctype": "DocType",
@@ -12,7 +12,8 @@
   "start_date",
   "collection_start_date",
   "column_break_1",
-  "end_date"
+  "end_date",
+  "amended_from"
  ],
  "fields": [
   {
@@ -28,6 +29,7 @@
    "default": "Today",
    "fieldname": "start_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Fecha inicio",
    "reqd": 1
   },
@@ -35,6 +37,7 @@
    "default": "Today",
    "fieldname": "end_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Fecha fin",
    "reqd": 1
   },
@@ -47,12 +50,21 @@
   {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Periodo Pago",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 10:59:33.869401",
+ "modified": "2022-12-26 11:48:00.821295",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Periodo Pago",
@@ -73,6 +85,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

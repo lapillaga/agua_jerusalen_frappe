@@ -11,10 +11,12 @@
   "description",
   "amount",
   "penalty",
+  "min",
   "column_break_1",
   "is_active",
   "grace_months",
-  "interest_penalty"
+  "interest_penalty",
+  "max"
  ],
  "fields": [
   {
@@ -72,11 +74,25 @@
    "in_list_view": 1,
    "label": "Inter\u00e9s mora",
    "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "min",
+   "fieldtype": "Int",
+   "label": "M\u00ednimo",
+   "reqd": 1
+  },
+  {
+   "default": "10",
+   "fieldname": "max",
+   "fieldtype": "Int",
+   "label": "M\u00e1ximo",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-24 17:04:41.428670",
+ "modified": "2022-12-26 12:26:03.087229",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Tarifa",

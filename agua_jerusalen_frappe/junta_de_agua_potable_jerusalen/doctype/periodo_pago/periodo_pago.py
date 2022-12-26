@@ -11,10 +11,13 @@ from frappe import _
 
 class PeriodoPago(Document):
 
-	def before_insert(self):
+	def after_insert(self):
 		"""Create new reading for each water meter"""
 		default_uom = frappe.db.get_single_value(
 			'Configuracion Junta', 'uom')
+
+		if not default_uom:
+			frappe.throw(_('Por favor selecccione una UOM en Configuracion Junta'))
 
 		water_meters = frappe.get_all("Medidor", filters={
 			'is_active': 1
@@ -22,19 +25,23 @@ class PeriodoPago(Document):
 
 		for water_meter in water_meters:
 			actual_reading = water_meter.actual_reading
+			customer = frappe.get_value("Medidor", water_meter.name, "customer")
 
 			if not actual_reading:
 				actual_reading = 0
 
-			self.append('measurements', {
-				'read_at': now(),
-				'water_meter': water_meter.name,
-				'previous_reading': actual_reading,
-				'actual_reading': actual_reading,
-				'total_consume': 0,
-				'operator': frappe.session.user,
-				'uom': default_uom
-			})
+			new_measurement = frappe.new_doc('Medicion')
+			new_measurement.water_meter = water_meter.name
+			new_measurement.customer = customer
+			new_measurement.previous_reading = actual_reading
+			new_measurement.actual_reading = actual_reading
+			new_measurement.uom = default_uom
+			new_measurement.operator = frappe.session.user
+			new_measurement.period = self.name
+			new_measurement.total_consume = 0
+			new_measurement.read_at = now()
+
+			new_measurement.insert()
 
 	def on_update(self):
 		"""Update payment period status"""
