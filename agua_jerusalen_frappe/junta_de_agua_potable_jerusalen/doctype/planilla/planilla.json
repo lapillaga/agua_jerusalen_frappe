@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:PL-{DD}-{MM}-{YYYY}-{####}",
+ "autoname": "format:PL-{DD}-{MM}-{YYYY}-{#####}",
  "creation": "2022-12-24 17:38:07.158364",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -162,7 +162,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 17:11:29.883371",
+ "modified": "2022-12-31 00:58:12.241526",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",

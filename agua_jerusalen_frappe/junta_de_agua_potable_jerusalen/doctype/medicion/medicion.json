@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:L-{DD}-{MM}-{YYYY}-{####}",
+ "autoname": "format:L-{DD}-{MM}-{YYYY}-{#####}",
  "creation": "2022-12-25 11:05:11.806447",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -122,7 +122,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 17:03:48.058220",
+ "modified": "2022-12-31 00:58:58.964269",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",
