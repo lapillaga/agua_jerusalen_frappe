@@ -18,6 +18,7 @@
   "instalation_date",
   "expiration_date",
   "is_active",
+  "customer_name",
   "section_break_1",
   "observation",
   "location_tab",
@@ -120,11 +121,19 @@
    "fieldname": "location",
    "fieldtype": "Geolocation",
    "label": "Mapa"
+  },
+  {
+   "depends_on": "customer",
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "label": "Nombre usuario",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-31 12:21:36.945388",
+ "modified": "2023-01-02 16:32:41.758350",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
