@@ -128,13 +128,12 @@
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Read Only",
-   "label": "Nombre usuario",
-   "reqd": 1
+   "label": "Nombre usuario"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-02 16:58:06.368297",
+ "modified": "2023-01-02 17:00:39.607330",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
