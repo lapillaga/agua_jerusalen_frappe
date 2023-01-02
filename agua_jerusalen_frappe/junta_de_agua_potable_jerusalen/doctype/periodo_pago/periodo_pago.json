@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PP-{MM}-{YYYY}-{##}",
+ "autoname": "naming_series:",
  "creation": "2022-12-24 17:19:12.146724",
  "default_view": "List",
  "doctype": "DocType",
@@ -15,7 +15,8 @@
   "column_break_1",
   "end_date",
   "amended_from",
-  "days_billed"
+  "days_billed",
+  "naming_series"
  ],
  "fields": [
   {
@@ -76,18 +77,31 @@
    "in_list_view": 1,
    "label": "Descripci\u00f3n",
    "reqd": 1
+  },
+  {
+   "bold": 1,
+   "default": "PP-.DD.-.MM.-.YYYY.-.##",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PP-.DD.-.MM.-.YYYY.-.##",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-26 18:07:46.340079",
+ "modified": "2023-01-02 01:35:20.837756",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Periodo Pago",
  "name_case": "UPPER CASE",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

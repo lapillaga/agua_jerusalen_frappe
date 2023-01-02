@@ -8,6 +8,18 @@ frappe.ui.form.on("Medicion", {
 });
 
 frappe.ui.form.on("Medicion", "actual_reading", function(frm) {
+    let total_consumption = calculateTotalConsume(frm);
+    frm.set_value('total_consume', total_consumption);
+    setExcessConsume(frm, total_consumption);
+});
+
+frappe.ui.form.on("Medicion", "previous_reading", function(frm) {
+    let total_consumption = calculateTotalConsume(frm);
+    frm.set_value('total_consume', total_consumption);
+    setExcessConsume(frm, total_consumption);
+});
+
+function calculateTotalConsume(frm) {
     // Calculate and set consume
     let total_consumption = frm.doc.actual_reading - frm.doc.previous_reading;
 
@@ -17,8 +29,10 @@ frappe.ui.form.on("Medicion", "actual_reading", function(frm) {
         return;
     }
 
-    frm.set_value('total_consume', total_consumption);
+    return total_consumption;
+}
 
+function setExcessConsume(frm, total_consumption) {
     frm.call('get_excess_consume', {
         water_meter_name: frm.doc.water_meter,
         total_consume: total_consumption,
@@ -27,4 +41,4 @@ frappe.ui.form.on("Medicion", "actual_reading", function(frm) {
         let excess_consume = r.message;
         frm.set_value('excess_consume', excess_consume);
     });
-});
+}

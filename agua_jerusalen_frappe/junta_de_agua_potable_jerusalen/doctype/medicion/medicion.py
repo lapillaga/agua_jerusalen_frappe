@@ -43,8 +43,15 @@ class Medicion(Document):
         total = excess_amount + rate.amount
         water_bill.total = total
 
+        barrio = frappe.get_doc('Barrio', water_meter.neighborhood)
+        default_address = frappe.db.get_single_value(
+            'Configuracion Junta', 'default_address')
+        water_bill.address = default_address + ', ' + barrio.description
+
         water_bill.measurement = self.name
         water_bill.save()
+
+        self.completed_at = now()
 
     @frappe.whitelist()
     def get_excess_consume(self, throw_if_missing=False, **kwargs):

@@ -11,7 +11,8 @@
   "max_water_meter",
   "basic_item",
   "uom",
-  "actual_operator"
+  "actual_operator",
+  "default_address"
  ],
  "fields": [
   {
@@ -41,12 +42,19 @@
    "label": "Operador actual",
    "options": "User",
    "reqd": 1
+  },
+  {
+   "default": "Bibli\u00e1n, Jerusal\u00e9n, ",
+   "fieldname": "default_address",
+   "fieldtype": "Data",
+   "label": "Direcci\u00f3n por defecto",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-26 14:04:22.856166",
+ "modified": "2023-01-02 00:08:04.010949",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Configuracion Junta",

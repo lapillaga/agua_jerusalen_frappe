@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Junta de agua potable de Jerusal\u00e9n</span>\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Configuraciones</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de tarifas\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de barrios\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Medidores y clientes</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de clientes\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de medidores\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Planillas y pagos</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Periodos de pago\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mediciones\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planillas de agua\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de mingas\",\"col\":3}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Junta de agua potable de Jerusal\u00e9n</span>\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Configuraciones</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de tarifas\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de barrios\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Medidores y clientes</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de clientes\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de medidores\",\"col\":3}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Planillas y pagos</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Periodos de pago\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mediciones\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de pagos\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planillas de agua\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lista de mingas\",\"col\":3}}]",
  "creation": "2022-12-26 16:02:03.099633",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -10,7 +10,7 @@
  "idx": 0,
  "label": "Junta agua",
  "links": [],
- "modified": "2022-12-31 07:29:15.937425",
+ "modified": "2023-01-02 00:03:41.783121",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Junta agua",
@@ -26,6 +26,13 @@
    "doc_view": "List",
    "label": "Periodos de pago",
    "link_to": "Periodo Pago",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Lista de pagos",
+   "link_to": "Pago Agua",
    "type": "DocType"
   },
   {

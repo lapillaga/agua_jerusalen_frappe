@@ -1,34 +1,51 @@
 {
  "actions": [],
- "autoname": "format:PL-{DD}-{MM}-{YYYY}-{#####}",
+ "autoname": "naming_series:",
  "creation": "2022-12-24 17:38:07.158364",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "general_tab",
   "customer",
   "issue_date",
   "start_date",
   "days_billed",
-  "paid",
   "base_price",
-  "measurement",
+  "penalty_price",
   "column_break_1",
+  "address",
   "water_meter",
   "expiration_date",
   "end_date",
   "rate",
-  "billed",
-  "penalty_price",
-  "excess_amount",
   "amended_from",
   "totals_section",
-  "total"
+  "excess_amount",
+  "column_break_4",
+  "total",
+  "measurement_tab",
+  "measurement",
+  "previous_reading",
+  "excess_consume",
+  "operator",
+  "column_break_2",
+  "consume",
+  "actual_reading",
+  "max_value",
+  "read_at",
+  "status_tab",
+  "paid",
+  "column_break_3",
+  "billed",
+  "naming_series"
  ],
  "fields": [
   {
    "fieldname": "water_meter",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Medidor",
    "options": "Medidor",
    "reqd": 1
@@ -69,7 +86,6 @@
    "default": "0",
    "fieldname": "paid",
    "fieldtype": "Check",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Pagado",
    "read_only": 1,
@@ -79,7 +95,6 @@
    "default": "0",
    "fieldname": "billed",
    "fieldtype": "Check",
-   "in_standard_filter": 1,
    "label": "Facturado",
    "read_only": 1,
    "reqd": 1
@@ -87,6 +102,8 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Cliente",
    "options": "Customer",
    "reqd": 1
@@ -115,12 +132,13 @@
   {
    "fieldname": "excess_amount",
    "fieldtype": "Currency",
-   "label": "Valor por exceso",
+   "label": "Total por exceso",
    "non_negative": 1,
-   "precision": "2",
-   "read_only": 1
+   "precision": "2"
   },
   {
+   "depends_on": "rate",
+   "fetch_from": "rate.amount",
    "fieldname": "base_price",
    "fieldtype": "Currency",
    "label": "Precio base",
@@ -130,6 +148,8 @@
    "reqd": 1
   },
   {
+   "depends_on": "rate",
+   "fetch_from": "rate.penalty",
    "fieldname": "penalty_price",
    "fieldtype": "Currency",
    "label": "Precio recargo",
@@ -147,7 +167,6 @@
    "fieldname": "total",
    "fieldtype": "Currency",
    "label": "Total planilla",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -156,17 +175,116 @@
    "label": "Medici\u00f3n",
    "options": "Medicion",
    "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Direcci\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "general_tab",
+   "fieldtype": "Tab Break",
+   "label": "Informaci\u00f3n general"
+  },
+  {
+   "fieldname": "measurement_tab",
+   "fieldtype": "Tab Break",
+   "label": "Medici\u00f3n"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Estado planilla"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.total_consume",
+   "fieldname": "consume",
+   "fieldtype": "Read Only",
+   "label": "Consumo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.previous_reading",
+   "fieldname": "previous_reading",
+   "fieldtype": "Read Only",
+   "label": "Lectura anterior",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "measurement.actual_reading",
+   "fieldname": "actual_reading",
+   "fieldtype": "Read Only",
+   "label": "Lectura nueva",
+   "reqd": 1
+  },
+  {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.operator",
+   "fieldname": "operator",
+   "fieldtype": "Read Only",
+   "label": "Operador",
+   "reqd": 1
+  },
+  {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.read_at",
+   "fieldname": "read_at",
+   "fieldtype": "Read Only",
+   "label": "Fecha de lectura",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.excess_consume",
+   "fieldname": "excess_consume",
+   "fieldtype": "Read Only",
+   "label": "Exceso consumo",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "default": "PL-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PL-.#####",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "rate.max",
+   "fieldname": "max_value",
+   "fieldtype": "Read Only",
+   "label": "Valor m\u00e1ximo (Metros c\u00fabicos)",
+   "reqd": 1
   }
  ],
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-31 00:58:12.241526",
+ "modified": "2023-01-02 01:51:07.214290",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

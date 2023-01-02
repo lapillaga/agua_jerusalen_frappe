@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:L-{DD}-{MM}-{YYYY}-{#####}",
+ "autoname": "naming_series:",
  "creation": "2022-12-25 11:05:11.806447",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -18,7 +18,8 @@
   "completed_at",
   "read_at",
   "uom",
-  "amended_from"
+  "amended_from",
+  "naming_series"
  ],
  "fields": [
   {
@@ -42,9 +43,7 @@
   {
    "fieldname": "previous_reading",
    "fieldtype": "Int",
-   "in_list_view": 1,
    "label": "Lectura anterior",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -57,7 +56,6 @@
   {
    "fieldname": "operator",
    "fieldtype": "Link",
-   "in_standard_filter": 1,
    "label": "Operador",
    "options": "User"
   },
@@ -79,10 +77,10 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.docstatus == 1",
    "fieldname": "completed_at",
    "fieldtype": "Datetime",
-   "label": "Fecha completado",
-   "read_only": 1
+   "label": "Fecha completado"
   },
   {
    "allow_in_quick_entry": 1,
@@ -96,6 +94,7 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Cliente",
    "options": "Customer",
@@ -117,17 +116,30 @@
    "label": "Exceso consumo",
    "read_only": 1,
    "reqd": 1
+  },
+  {
+   "bold": 1,
+   "default": "LE-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "LE-.#####",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-31 00:58:58.964269",
+ "modified": "2023-01-02 02:12:49.177344",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",
  "name_case": "UPPER CASE",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

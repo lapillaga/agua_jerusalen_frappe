@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-01 22:05:37.922296",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "bill",
+  "amended_from",
+  "naming_series",
+  "water_meter",
+  "column_break_1",
+  "customer_name",
+  "paid_at",
+  "address",
+  "bill_section",
+  "start_date",
+  "previous_reading",
+  "total_consume",
+  "days_billed",
+  "column_break_2",
+  "end_date",
+  "actual_reading",
+  "excess_consume",
+  "rate",
+  "total_section",
+  "separator",
+  "column_break_3",
+  "is_billed",
+  "total_bill",
+  "total_excess",
+  "total"
+ ],
+ "fields": [
+  {
+   "default": "Now",
+   "fieldname": "paid_at",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Fecha y hora del pago",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pago Agua",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "default": "PA-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PA-.#####",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Cliente",
+   "options": "Customer",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "customer",
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Small Text",
+   "in_global_search": 1,
+   "label": "Nombre del cliente",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bill",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Planilla",
+   "options": "Planilla",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bill_section",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n de la planilla"
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Direcci\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "water_meter",
+   "fieldtype": "Link",
+   "label": "Medidor",
+   "options": "Medidor",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Read Only",
+   "label": "Fecha desde",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Read Only",
+   "label": "Fecha hasta",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bill.days_billed",
+   "fieldname": "days_billed",
+   "fieldtype": "Read Only",
+   "label": "D\u00edas facturados",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.previous_reading",
+   "fieldname": "previous_reading",
+   "fieldtype": "Read Only",
+   "label": "Lectura Anterior",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.actual_reading",
+   "fieldname": "actual_reading",
+   "fieldtype": "Read Only",
+   "label": "Lectura nueva",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.consume",
+   "fieldname": "total_consume",
+   "fieldtype": "Read Only",
+   "label": "Consumo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.excess_consume",
+   "fieldname": "excess_consume",
+   "fieldtype": "Read Only",
+   "label": "Exceso consumo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_section",
+   "fieldtype": "Section Break",
+   "label": "Totales",
+   "options": "fa fa-money"
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.base_price",
+   "fieldname": "total_bill",
+   "fieldtype": "Currency",
+   "label": "Total planilla",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bill.excess_amount",
+   "fieldname": "total_excess",
+   "fieldtype": "Currency",
+   "label": "Total exceso",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total a cancelar",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "separator",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_billed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Facturado",
+   "reqd": 1
+  },
+  {
+   "depends_on": "bill",
+   "fetch_from": "bill.rate",
+   "fieldname": "rate",
+   "fieldtype": "Read Only",
+   "label": "Tarifa",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-01-02 01:58:11.352568",
+ "modified_by": "Administrator",
+ "module": "Junta de Agua Potable Jerusalen",
+ "name": "Pago Agua",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
