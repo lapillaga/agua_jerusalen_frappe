@@ -41,6 +41,7 @@ function create_payment(frm) {
         bill: frm.doc.name,
         water_meter: frm.doc.water_meter,
         address: frm.doc.address,
+        user: frappe.session.user,
         total: frm.doc.base_price + frm.doc.excess_amount,
     }).then(doc => {
         if (doc) {

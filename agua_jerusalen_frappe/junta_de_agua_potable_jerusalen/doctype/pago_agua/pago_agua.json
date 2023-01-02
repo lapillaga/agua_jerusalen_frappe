@@ -22,6 +22,7 @@
   "previous_reading",
   "total_consume",
   "days_billed",
+  "user",
   "column_break_2",
   "end_date",
   "actual_reading",
@@ -33,7 +34,9 @@
   "is_billed",
   "total_bill",
   "total_excess",
-  "total"
+  "total",
+  "observation_section",
+  "observations"
  ],
  "fields": [
   {
@@ -241,12 +244,30 @@
    "fieldtype": "Read Only",
    "label": "Tarifa",
    "reqd": 1
+  },
+  {
+   "columns": 11,
+   "fieldname": "observations",
+   "fieldtype": "Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "Responsable",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "observation_section",
+   "fieldtype": "Section Break",
+   "label": "Observaciones"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-02 01:58:11.352568",
+ "modified": "2023-01-02 04:58:41.797874",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Pago Agua",
