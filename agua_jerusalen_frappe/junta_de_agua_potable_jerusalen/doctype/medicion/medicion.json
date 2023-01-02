@@ -19,7 +19,8 @@
   "read_at",
   "uom",
   "amended_from",
-  "naming_series"
+  "naming_series",
+  "barrio"
  ],
  "fields": [
   {
@@ -129,12 +130,19 @@
    "print_hide": 1,
    "reqd": 1,
    "set_only_once": 1
+  },
+  {
+   "depends_on": "water_meter",
+   "fetch_from": "water_meter.neighborhood",
+   "fieldname": "barrio",
+   "fieldtype": "Read Only",
+   "label": "Barrio"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-02 17:56:54.182121",
+ "modified": "2023-01-02 18:07:11.466440",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medicion",
