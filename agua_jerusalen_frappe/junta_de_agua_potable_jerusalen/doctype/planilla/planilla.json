@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "general_tab",
+  "period",
   "customer",
   "issue_date",
   "start_date",
@@ -274,13 +275,21 @@
    "fieldtype": "Read Only",
    "label": "Valor m\u00e1ximo (Metros c\u00fabicos)",
    "reqd": 1
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Periodo de pago",
+   "options": "Periodo Pago",
+   "reqd": 1
   }
  ],
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-02 18:21:02.859958",
+ "modified": "2023-01-02 18:35:54.379989",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",

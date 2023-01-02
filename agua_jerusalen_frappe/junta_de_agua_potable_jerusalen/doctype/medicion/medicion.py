@@ -49,6 +49,7 @@ class Medicion(Document):
         water_bill.address = default_address + ', ' + barrio.description
 
         water_bill.measurement = self.name
+        water_bill.period = self.period
         water_bill.save()
 
         self.completed_at = now()
