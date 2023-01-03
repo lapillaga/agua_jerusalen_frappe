@@ -277,19 +277,20 @@
    "reqd": 1
   },
   {
+   "depends_on": "measurement",
+   "fetch_from": "measurement.period",
    "fieldname": "period",
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Periodo de pago",
-   "options": "Periodo Pago",
-   "reqd": 1
+   "options": "Periodo Pago"
   }
  ],
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-02 18:35:54.379989",
+ "modified": "2023-01-03 08:29:21.847589",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Planilla",
