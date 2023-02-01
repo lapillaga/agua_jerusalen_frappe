@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "customer",
+  "period",
   "bill",
   "amended_from",
   "naming_series",
@@ -262,12 +263,22 @@
    "fieldname": "observation_section",
    "fieldtype": "Section Break",
    "label": "Observaciones"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fetch_from": "bill.period",
+   "fieldname": "period",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Periodo de Pago",
+   "options": "Periodo Pago",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-02 18:21:43.532212",
+ "modified": "2023-01-31 18:32:43.951743",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Pago Agua",
