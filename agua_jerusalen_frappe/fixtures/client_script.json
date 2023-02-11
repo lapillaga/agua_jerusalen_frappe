@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Medidor",
+  "enabled": 1,
+  "modified": "2023-02-11 13:51:06.532717",
+  "module": "Junta de Agua Potable Jerusalen",
+  "name": "Get Responsible Customers",
+  "script": "frappe.ui.form.on(\"Medidor\", {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"responsible\", function() {\n\t\t\treturn {\n\t\t\t\tfilters: [\n\t\t\t\t\t[\"Customer\",\"relation_type\", \"=\", \"Representante\"]\n\t\t\t\t]\n\t\t\t}\n\t\t});\n\t}\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Medidor",
+  "enabled": 1,
+  "modified": "2023-02-11 14:30:21.514448",
+  "module": "Junta de Agua Potable Jerusalen",
+  "name": "Get Partner Customer",
+  "script": "frappe.ui.form.on(\"Medidor\", {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"customer\", function() {\n\t\t\treturn {\n\t\t\t\tfilters: [\n\t\t\t\t\t[\"Customer\",\"relation_type\", \"=\", \"Socio\"]\n\t\t\t\t]\n\t\t\t}\n\t\t});\n\t}\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Medidor",
+  "enabled": 1,
+  "modified": "2023-02-11 14:31:29.064286",
+  "module": "Junta de Agua Potable Jerusalen",
+  "name": "Get Invoice Customer",
+  "script": "frappe.ui.form.on(\"Medidor\", {\n\tsetup: function(frm) {\n\t\tfrm.set_query(\"invoice_customer\", function() {\n\t\t\treturn {\n\t\t\t\tfilters: [\n\t\t\t\t\t[\"Customer\",\"relation_type\", \"=\", \"Factura\"]\n\t\t\t\t]\n\t\t\t}\n\t\t});\n\t}\n});",
+  "view": "Form"
+ }
+]

@@ -7,7 +7,8 @@ app_description = "Aplicacion para la junta de agua potable de jerusalen"
 app_email = "lpillag@gmail.com"
 app_license = "MIT"
 fixtures = [
-  "Custom Field"
+  "Custom Field",
+  "Client Script",
 ]
 
 doc_events = {

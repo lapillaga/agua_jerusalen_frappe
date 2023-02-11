@@ -13,16 +13,20 @@
   "neighborhood",
   "actual_reading",
   "rate",
+  "responsible",
   "column_break_1",
   "number",
   "instalation_date",
   "expiration_date",
-  "is_active",
   "customer_name",
+  "invoice_customer",
+  "is_active",
   "section_break_1",
   "observation",
   "location_tab",
-  "location"
+  "location",
+  "neighborhood_desc",
+  "neighborhood_code"
  ],
  "fields": [
   {
@@ -95,7 +99,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Cliente",
+   "label": "Socio",
    "options": "Customer",
    "reqd": 1
   },
@@ -129,11 +133,41 @@
    "fieldname": "customer_name",
    "fieldtype": "Read Only",
    "label": "Nombre usuario"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fetch_if_empty": 1,
+   "fieldname": "responsible",
+   "fieldtype": "Link",
+   "label": "Representante",
+   "options": "Customer"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fetch_if_empty": 1,
+   "fieldname": "invoice_customer",
+   "fieldtype": "Link",
+   "label": "Cuenta facturaci\u00f3n",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "neighborhood.description",
+   "fieldname": "neighborhood_desc",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Descripci\u00f3n barrio"
+  },
+  {
+   "fetch_from": "neighborhood.code",
+   "fieldname": "neighborhood_code",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "C\u00f3digo barrio"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-02 17:00:39.607330",
+ "modified": "2023-02-11 14:36:33.730358",
  "modified_by": "Administrator",
  "module": "Junta de Agua Potable Jerusalen",
  "name": "Medidor",
