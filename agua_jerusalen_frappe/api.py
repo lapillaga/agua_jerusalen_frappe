@@ -19,6 +19,7 @@ def login(email, password):
 
     api_generate = generate_keys(frappe.session.user)
     user = frappe.get_doc('User', frappe.session.user)
+
     image_url = None
     if user.user_image is not None:
         image_path = frappe.utils.get_files_path(user.user_image)
