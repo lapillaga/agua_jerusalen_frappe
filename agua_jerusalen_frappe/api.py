@@ -19,8 +19,10 @@ def login(email, password):
 
     api_generate = generate_keys(frappe.session.user)
     user = frappe.get_doc('User', frappe.session.user)
-    image_path = frappe.utils.get_files_path(user.user_image)
-    image_url = frappe.utils.get_url(image_path)
+    image_url = None
+    if user.user_image:
+        image_path = frappe.utils.get_files_path(user.user_image)
+        image_url = frappe.utils.get_url(image_path)
 
     frappe.response['message'] = {
         'sid': frappe.session.sid,
@@ -31,7 +33,7 @@ def login(email, password):
             'username': user.username,
             'fullName': user.full_name,
             'email': user.email,
-            'image': image_url,
+            'image': image_url
         }
     }
 
