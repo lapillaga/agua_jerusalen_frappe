@@ -9,6 +9,7 @@ app_license = "MIT"
 fixtures = [
   "Custom Field",
   "Client Script",
+  "Print Format"
 ]
 
 doc_events = {
